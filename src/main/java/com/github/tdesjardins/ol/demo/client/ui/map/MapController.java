@@ -6,12 +6,15 @@ import com.github.tdesjardins.ol.demo.client.DominoMapDemoContext;
 import com.github.tdesjardins.ol.demo.client.event.FitLayoutEvent;
 import com.github.tdesjardins.ol.demo.client.event.StatusChangeEvent;
 import com.github.tdesjardins.ol.demo.client.event.UnFitLayoutEvent;
-import com.github.tdesjardins.ol.demo.client.utils.DemoUtils;
 
+import elemental2.dom.DomGlobal;
+import elemental2.dom.Event;
 import elemental2.dom.HTMLElement;
 import ol.Map;
 
 import java.lang.Override;
+
+import org.dominokit.addons.ol.presets.MapPresets;
 
 @Controller(route = "/application/map", selector = "content", componentInterface = IMapComponent.class, component = MapComponent.class)
 public class MapController extends AbstractComponentController<DominoMapDemoContext, IMapComponent, HTMLElement> implements IMapComponent.Controller {
@@ -25,9 +28,11 @@ public class MapController extends AbstractComponentController<DominoMapDemoCont
 
     @Override
     public void start() {
+
         this.router.storeInCache(this);
-        this.map = DemoUtils.createDefaultMap(MAP_ID);
-        
+        this.map = MapPresets.getOsmMap(MAP_ID);
+        DomGlobal.window.addEventListener("resize", (Event evt) -> this.map.updateSize());
+
     }
 
     @Override

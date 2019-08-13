@@ -23,12 +23,12 @@ public class MapCompositeContainer2Controller  extends AbstractComponentControll
     @Override
     public void start() {
         this.router.storeInCache(this);
-        this.eventBus.fireEvent(new StatusChangeEvent("CompositeContainer2"));
     }
 
     @Override
     public void activate() {
         super.activate();
+        this.eventBus.fireEvent(new StatusChangeEvent("CompositeContainer2"));
     }
 
 }

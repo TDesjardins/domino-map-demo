@@ -24,6 +24,12 @@ implements INavigationComponent.Controller {
             case "mapCard":
                 router.route("/application/mapCard");
                 break;
+            case "container1":
+                router.route("/application/container1");
+                break;
+            case "container2":
+                router.route("/application/container2");
+                break;
         }
 
     }

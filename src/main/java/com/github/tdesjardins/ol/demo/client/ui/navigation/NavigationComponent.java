@@ -13,6 +13,10 @@ public class NavigationComponent extends AbstractComponent<INavigationComponent.
 
     private TreeItem mapCardItem;
 
+    private TreeItem mapCompositeContainer1;
+
+    private TreeItem mapCompositeContainer2;
+
     public NavigationComponent() {
         super();
     }
@@ -29,8 +33,16 @@ public class NavigationComponent extends AbstractComponent<INavigationComponent.
         this.mapCardItem = TreeItem.create("Card with map", Icons.ALL.map())
         .addClickListener(e -> getController().doNavigateTo("mapCard"));
 
-        tree.appendChild(mapItem);
-        tree.appendChild(mapCardItem);
+        this.mapCompositeContainer1 = TreeItem.create("Map composite integration", Icons.ALL.map())
+        .addClickListener(e -> getController().doNavigateTo("container1"));
+
+        this.mapCompositeContainer2 = TreeItem.create("Map composite integration 2nd", Icons.ALL.map())
+        .addClickListener(e -> getController().doNavigateTo("container2"));
+
+        tree.appendChild(this.mapItem);
+        tree.appendChild(this.mapCardItem);
+        tree.appendChild(this.mapCompositeContainer1);
+        tree.appendChild(this.mapCompositeContainer2);
 
     }
 

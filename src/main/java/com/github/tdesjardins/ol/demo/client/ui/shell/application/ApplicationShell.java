@@ -2,6 +2,7 @@ package com.github.tdesjardins.ol.demo.client.ui.shell.application;
 
 import com.github.nalukit.nalu.client.component.AbstractShell;
 import com.github.nalukit.nalu.client.component.annotation.Shell;
+import com.github.nalukit.nalu.client.exception.RoutingInterceptionException;
 import com.github.tdesjardins.ol.demo.client.DominoMapDemoContext;
 import com.github.tdesjardins.ol.demo.client.event.FitLayoutEvent;
 import com.github.tdesjardins.ol.demo.client.event.UnFitLayoutEvent;
@@ -43,7 +44,7 @@ public class ApplicationShell
     }
 
     @Override
-    public void bind() {
+    public void bind(ShellLoader shellLoader) throws RoutingInterceptionException {
 
         this.eventBus.addHandler(FitLayoutEvent.TYPE,
                 event -> {
@@ -56,6 +57,9 @@ public class ApplicationShell
                     layout.unfitWidth();
                     layout.unfitHeight();
                 });
+
+        super.bind(shellLoader);
+
     }
 
 }

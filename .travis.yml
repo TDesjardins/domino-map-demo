@@ -4,11 +4,14 @@ addons:
   apt:
     packages:
       - oracle-java8-installer
-      - oracle-java9-installer
 
 jdk:
   - oraclejdk8
-  - oraclejdk9
+  - oraclejdk11
+  - openjdk8
+  - openjdk9
+  - openjdk10
+  - openjdk11
 
 notifications:
   email: false

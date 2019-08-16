@@ -30,6 +30,12 @@ implements INavigationComponent.Controller {
             case "container2":
                 router.route("/application/container2");
                 break;
+            case "container3":
+                router.route("/application/container3");
+                break;
+            case "container4":
+                router.route("/application/container4");
+                break;
         }
 
     }

@@ -22,7 +22,7 @@ public class MapCompositeContainer2Controller  extends AbstractComponentControll
 
     @Override
     public void start() {
-        this.router.storeInCache(this);
+        this.router.storeInCache(super.getComposites().get("mapComposite"));
     }
 
     @Override

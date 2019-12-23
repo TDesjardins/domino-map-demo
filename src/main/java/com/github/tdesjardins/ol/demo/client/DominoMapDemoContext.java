@@ -1,6 +1,6 @@
 package com.github.tdesjardins.ol.demo.client;
 
-import com.github.nalukit.nalu.client.application.IsContext;
+import com.github.nalukit.nalu.client.context.IsContext;
 
 public class DominoMapDemoContext implements IsContext {
 

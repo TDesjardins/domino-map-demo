@@ -17,7 +17,7 @@ public class MapComponent
     @Override
     public void render() {
         MapView mapView = new MapView(getController().getMapId());
-        initElement(mapView.asElement());
+        initElement(mapView.element());
     }
 
 }

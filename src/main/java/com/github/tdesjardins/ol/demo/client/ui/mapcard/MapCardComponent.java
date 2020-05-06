@@ -25,7 +25,7 @@ public class MapCardComponent extends AbstractComponent<IMapCardComponent.Contro
                         .addColumn(Column.span8()
                                 .offset2()
                                 .appendChild(mapCard)
-                        )).asElement());
+                        )).element());
 
     }
 

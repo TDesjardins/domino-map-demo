@@ -21,7 +21,7 @@ public class NavigationComponent extends AbstractComponent<INavigationComponent.
     public void render() {
 
         Tree tree = Tree.create("Navigation");
-        initElement(tree.asElement());
+        initElement(tree.element());
 
         this.mapItem = TreeItem.create("OSM Map", Icons.ALL.map())
         .addClickListener(e -> getController().doNavigateTo("map"));
